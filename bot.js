@@ -23,7 +23,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
     if (user.bot) return;
     if (!reaction.message.guild) return;
     console.log(reaction.message.channel.id);
-    if (reaction.message.channel.id == '777273911267688452') {
+    if (reaction.message.channel.id == '583484854545416203') {
        console.log(reaction.emoji.name);
        //he him
         if (reaction.emoji.name === '❤️') {
@@ -71,7 +71,7 @@ client.on('messageReactionRemove', async (reaction, user) => {
   if (reaction.partial) await reaction.fetch();
   if (user.bot) return;
   if (!reaction.message.guild) return;
-  if (reaction.message.channel.id == '777273911267688452') {
+  if (reaction.message.channel.id == '583484854545416203') {
     console.log(reaction.emoji.name);
     //he him
       if (reaction.emoji.name === '❤️') {
@@ -118,7 +118,7 @@ client.on('messageReactionRemove', async (reaction, user) => {
   if (reaction.partial) await reaction.fetch();
   if (user.bot) return;
   if (!reaction.message.guild) return;
-  if (reaction.message.channel.id == '802209416685944862') {
+  if (reaction.message.channel.id == '583484854545416203') {
     if (reaction.emoji.name === '814615592233467904') {
       await reaction.message.guild.members.cache
         .get(user.id)
