@@ -72,7 +72,6 @@ client.on('messageReactionRemove', async (reaction, user) => {
   if (user.bot) return;
   if (!reaction.message.guild) return;
   if (reaction.message.channel.id == '820680539446181908') {
-    console.log(reaction.emoji.name);
     //he him
       if (reaction.emoji.name === '❤️') {
         await reaction.message.guild.members.cache
@@ -113,13 +112,13 @@ client.on('messageReactionRemove', async (reaction, user) => {
 });
 
 //Removing Notifications Role
-client.on('messageReactionRemove', async (reaction, user) => {
+client.on('messageReactionAdd', async (reaction, user) => {
   if (reaction.message.partial) await reaction.message.fetch();
   if (reaction.partial) await reaction.fetch();
   if (user.bot) return;
   if (!reaction.message.guild) return;
   if (reaction.message.channel.id == '820680539446181908') {
-    if (reaction.emoji.name === '🔕' && reaction.message.guild.members.cache.get(user.id).roles.has('663123260753313798')) {
+    if (reaction.emoji.name === '🔕') {
       await reaction.message.guild.members.cache
         .get(user.id)
         .roles.remove('663123260753313798');
