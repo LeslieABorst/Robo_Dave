@@ -62,6 +62,18 @@ client.on('messageReactionAdd', async (reaction, user) => {
             .get(user.id)
             .roles.add('814178062291566649');
         }
+        //it/its
+      if (reaction.emoji.name === '🖤') {
+        await reaction.message.guild.members.cache
+          .get(user.id)
+          .roles.add('821135714024423484');
+      }
+      //other/ask
+      if (reaction.emoji.name === '🤎') {
+        await reaction.message.guild.members.cache
+          .get(user.id)
+          .roles.add('821135990378463282');
+      }
     } else return;
 });
 
@@ -107,6 +119,18 @@ client.on('messageReactionRemove', async (reaction, user) => {
         await reaction.message.guild.members.cache
           .get(user.id)
           .roles.remove('814178062291566649');
+      }
+      //it/its
+      if (reaction.emoji.name === '🖤') {
+        await reaction.message.guild.members.cache
+          .get(user.id)
+          .roles.remove('821135714024423484');
+      }
+      //other/ask
+      if (reaction.emoji.name === '🤎') {
+        await reaction.message.guild.members.cache
+          .get(user.id)
+          .roles.remove('821135990378463282');
       }
   } else return;
 });
