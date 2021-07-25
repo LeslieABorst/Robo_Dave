@@ -150,3 +150,36 @@ client.on('messageReactionAdd', async (reaction, user) => {
 
   } else return;
 });
+
+//add aion role
+client.on('messageReactionAdd', async (reaction, user) => {
+  if (reaction.message.partial) await reaction.message.fetch();
+  if (reaction.partial) await reaction.fetch();
+  if (user.bot) return;
+  if (!reaction.message.guild) return;
+  console.log(reaction.message.channel.id);
+  if (reaction.message.channel.id == '820680539446181908') {
+    console.log(reaction.emoji.name);
+    if (reaction.emoji.name === '⚔️') {
+      await reaction.message.guild.members.cache
+        .get(user.id)
+        .roles.add('864245159109591080');
+        console.log("new role added!");
+    }
+  } else return;
+});
+
+//remove aion role
+client.on('messageReactionRemove', async (reaction, user) => {
+  if (reaction.message.partial) await reaction.message.fetch();
+  if (reaction.partial) await reaction.fetch();
+  if (user.bot) return;
+  if (!reaction.message.guild) return;
+  if (reaction.message.channel.id == '820680539446181908') {
+      if (reaction.emoji.name === '⚔️') {
+        await reaction.message.guild.members.cache
+          .get(user.id)
+          .roles.remove('864245159109591080');
+      }
+  } else return
+});
